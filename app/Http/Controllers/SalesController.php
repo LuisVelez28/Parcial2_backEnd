@@ -24,11 +24,11 @@ class SalesController extends Controller
     public function store(Request $request)
     {
         $sales = new sales();
-        $sales->nombre_vendedor = $request->nombre_vendedor;
-        $sales->nombre_cliente = $request->nombre_cliente;
-        $sales->nombre_producto = $request->nombre_producto;
+        $sales->nombre_vendedor = $request->empleado;
+        $sales->nombre_cliente = $request->cliente;
+        $sales->nombre_producto = $request->producto;
         $sales->precio = $request->precio;
-        $sales->fecha_compra = $request->fecha_compra;
+        $sales->fecha_compra = $request->fecha;
         $sales->save();
         return $sales;
     }
@@ -46,11 +46,11 @@ class SalesController extends Controller
     public function update(Request $request, sales $sales)
     {
         $sales = sales::find($sales->id);
-        $sales->nombre_vendedor = $request->nombre_vendedor;
-        $sales->nombre_cliente = $request->nombre_cliente;
-        $sales->nombre_producto = $request->nombre_producto;
+        $sales->nombre_vendedor = $request->empleado;
+        $sales->nombre_cliente = $request->cliente;
+        $sales->nombre_producto = $request->producto;
         $sales->precio = $request->precio;
-        $sales->fecha_compra = $request->fecha_compra;
+        $sales->fecha_compra = $request->fecha;
         $sales->save();
         return $sales;
     }
